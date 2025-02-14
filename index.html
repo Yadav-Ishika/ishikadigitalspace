@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect with Ishika</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Online CSS Properties -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"/>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./Images_Index/favicon.ico">
+    <style>
+        /* Toast Notification Styles */
+        #toastOffline {
+            display: none;
+            position: fixed;
+            bottom: 0px;
+            text-align: center;
+            background-color: #212121;
+            color: #fff;
+            padding: 5px 20px;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+            z-index: 1000;
+            width: 100%;
+            font-size: 14px;
+        }
+        #toastOnline {
+            display: none;
+            position: fixed;
+            bottom: 0px;
+            text-align: center;
+            background-color: green;
+            color: #fff;
+            padding: 5px 20px;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+            z-index: 1000;
+            width: 100%;
+            font-size: 14px;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="toastOffline">Network status will be shown here</div>
+    <div id="toastOnline">Network status will be shown here</div>
+    <!-- Navigation Bar Starts -->
+    <header>
+        <div class="container_main_for_header">
+            <div class="container_top_for_header" id="color_change_item_1">
+                <div id="logo">
+                    <a href="index.html"><p id="color_change_item_2">Ishika Yadav</p></a>
+                </div>
+                <div class="navigation_right">
+                    <nav class="navigators">
+                        <ul>
+                            <li class="nav_link_buttons"><a href="#" id="color_change_item_3">Tech Stack</a></li>
+                            <li class="nav_link_buttons"><a href="project.html" id="color_change_item_4">Project</a></li>
+                            <li class="nav_link_buttons"><a href="#" id="color_change_item_6">Researches</a></li>
+                            <li class="nav_link_buttons"><a href="#" id="color_change_item_5">Publications</a></li>
+                            <li class="nav_link_buttons"><a href="#" id="color_change_item_7">Know Me</a></li>
+                            <li class="nav_link_buttons"><a href="feedback.html" id="color_change_item_8">Feedback</a></li>
+                            <!-- <li class="nav_link_buttons"><a href="#" id="color_change_item_9">Your Corner</a></li> -->
+                            <svg id="svgIcon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="md:hidden w-4 text-purple-700 mt-1 ml-2 cursor-pointer dark:text-white" height="28" width="28" xmlns="http://www.w3.org/2000/svg"><path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path><path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"></path></svg>
+                        </ul>
+                    </nav>
+                    <div class="login_signup_buttons">
+                        <!-- <button>Log In</button> -->
+                        <!-- <button>Sign Up</button> -->
+                    </div>
+                    <div class="menu_and_option">
+                        <div id="menu_icon">
+                            <i class="ri-menu-3-fill" id="menu_3_icon"></i>
+                        </div>
+                        <div id="nav_options" style="display: none;">
+                            <div id="header_of_option_drop">
+                                <p>Mode : Light / Dark</p>
+                                <svg id="svgIcon_" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="md:hidden w-4 text-purple-700 mt-1 ml-2 cursor-pointer dark:text-white" height="28" width="28" xmlns="http://www.w3.org/2000/svg"><path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path><path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"></path></svg>
+                            </div>
+                            <div id="horizontal_line_in_option_drop"></div>
+                            <li class="nav_link_buttons"><a href="#" id="color_change_item_3">Tech Stack</a></li>
+                            <li class="nav_link_buttons"><a href="project.html" id="color_change_item_4">Project</a></li>
+                            <li class="nav_link_buttons"><a href="#" id="color_change_item_6">Researches</a></li>
+                            <li class="nav_link_buttons"><a href="#" id="color_change_item_5">Publications</a></li>
+                            <li class="nav_link_buttons"><a href="#" id="color_change_item_7">Know Me</a></li>
+                            <li class="nav_link_buttons"><a href="feedback.html" id="color_change_item_8">Feedback</a></li>
+                            <!-- <li class="nav_link_buttons"><a href="#" id="color_change_item_9">Your Corner</a></li> -->
+                            <div id="signbtn" class="dropdown_login_signup_buttons">
+                                <!-- <button>Log In</button> -->
+                                <!-- <button>Sign Up</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="separator_line"></div>
+            <div class="container_bottom_for_header" id="color_change_item_10">
+                <div id="live_running_updates">
+                    <marquee scrollamount="11"><p>About to start a project on Data Science using Python, Interested viewers contact me.</p></marquee>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Navigation Bar Ends -->
+
+    <!-- Page 1 Content Starts -->
+    <div class="content_page_first" id="color_change_item_13">
+        <div class="division_content_page_first_left" id="color_change_item_12">
+            <div id="title">
+                <h1 id="h_1">Embark on a Journey with <span>Ishika Yadav</span></h1>
+                <h2 id="h_2">~ Read • Understand • Elevate</h2>
+                <p>Welcome to my digital space! A passionate tech enthusiast currently pursuing a BTech in Computer Science and Engineering. With a keen interest in Data Science, Machine Learning, and Artificial Intelligence, I'm on a journey to explore the frontiers of technology. Join me as I navigate through the ever-evolving landscape of innovation and strive towards my goal of pursuing an M.Tech in DS, ML, AI or Gen-AI.</p>
+            </div>
+        </div>
+        <div class="division_content_page_first_right">
+            <img src="./Images_Index/laptop_on_desk.jpg" alt="">
+        </div>
+    </div>
+    <!-- Page 1 Content Ends -->
+    
+    <!-- Page 2 Content Starts -->
+    <div class="content_page_second" id="color_change_item_11">
+        <div class="heading_as_separator">
+            <h1 id="h_1">Recommendations</h1>
+        </div>
+        <div id="recommendation_cards">
+            <div class="recommendation_card", id="color_change_item_14">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="block w-3 h-3 text-gray-400 mb-4" viewBox="0 0 975.036 975.036"><path d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z"></path></svg>
+                <p>I Strongly endorse Ishika for her outstanding teamwork, reliability, and ability to consistently exceed expectations. She always demonstrate good leadership qualities and a proactive approach to problem-solving.</p>
+                <h3 class="recommender_name" id="color_change_item_15" style="cursor: pointer;">Kanishk Tyagi</h3>
+                <h4 class="recommender_post">Computer Science & Engineering Student</h4>
+            </div>
+            <div class="recommendation_card" id="recommendation_card_second_child">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="block w-3 h-3 text-gray-400 mb-4" viewBox="0 0 975.036 975.036"><path d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z"></path></svg>
+                <p>I had the distinct privilege of working alongside Ishika Yadav during our tenure at Galgotias University, and her exceptional caliber never ceased to impress me. She embodies a rare blend of intellectual rigor, technical acumen, and creative problem-solving abilities. Her capacity to assimilate complex concepts and seamlessly translate them into innovative, real-world solutions underscores her mastery in the field. 
+
+                    What truly distinguishes Ishika, is her insatiable curiosity and proactive approach to continuous learning. She consistently explores emerging technologies and studies, fostering a culture of growth and innovation within any environment she operates. Her collaborative spirit and empathetic leadership have been instrumental in cultivating synergy among team members, ensuring the success of every initiative she contributes to. 
+                    
+                    I am confident that her steadfast dedication, coupled with her ability to adapt to evolving technological landscapes, will make her an invaluable asset to any organization.
+                    
+                    It is without hesitation that I extend my highest recommendation for Ishika Yadav in any future endeavors she pursues.</p>
+                <h3 class="recommender_name" id="color_change_item_16" style="cursor: pointer;">Rayyan Ashraf</h3>
+                <h4 class="recommender_post">Computer Science & Engineering Student</h4>
+            </div>
+        </div>
+    </div>
+    <!-- Page 2 Content Ends -->
+
+    <!-- Page 3 Content Starts -->
+    <div class="content_page_third" id="third_page">
+        <div class="heading_as_separator reveal">
+            <h1 id="h_1">Currently Dealing With</h1>
+        </div>
+
+        <div id="group_skills" class="reveal">
+            <div class="individual_skill" id="ind_skil1">
+                <h2 class="skill_heading" id="skill_h1"><img src="./Images_Index/python-logo.png" style="display: inline-block; vertical-align: middle;"/>&nbsp;&nbsp;&nbsp;Python Development</h2>
+                <div class="base_container">
+                    <div id="actual_coverage1" class="animate-on-visible"></div>
+                </div>
+            </div>
+            <div class="individual_skill" id="ind_skil2">
+                <h2 class="skill_heading" id="skill_h2"><img src="./Images_Index/machine-learning-logo.png" style="display: inline-block; vertical-align: middle;"/>&nbsp;&nbsp;Machine Learning</h2>
+                <div class="base_container">
+                    <div id="actual_coverage2" class=""></div>
+                </div>
+            </div>
+            <div class="individual_skill" id="ind_skil3">
+                <h2 class="skill_heading" id="skill_h3"><img src="./Images_Index/java-logo.png" style="display: inline-block; vertical-align: middle;"/>&nbsp;&nbsp;Java Development</h2>
+                <div class="base_container">
+                    <div id="actual_coverage3" class=""></div>
+                </div>
+            </div>
+            <div class="individual_skill" id="ind_skil4">
+                <h2 class="skill_heading" id="skill_h4"><img src="./Images_Index/data-science-logo.png" style="display: inline-block; vertical-align: middle;"/>&nbsp;&nbsp;Data Science</h2>
+                <div class="base_container">
+                    <div id="actual_coverage4" class=""></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page 3 Content Ends -->
+
+    <!-- Page 4 Content Starts -->
+    <div class="content_page_fourth" id="fourth_page">
+        <div class="heading_as_separator reveal">
+            <h1 id="h_1">Softwares Working On</h1>
+        </div>
+
+        <div id="group_softwares" class="reveal">
+            <div id="section_top">
+                <div class="software_common_design" id="redirect_vscode">
+                    <div class="software_image">
+                        <img src="./Images_Index/vscode.png" alt="">
+                    </div>
+                    <div class="software_name">
+                        <h1>Visual Studio Code</h1>
+                    </div>
+                    <div class="software_description">
+                        <p><b>Version:</b> 1.89.1</p>
+                        <p><b>Windows Model:</b> <span id="windows_1" class="description_links">x64</span>, <span id="windows_2" class="description_links">Arm64</span></p>
+                        <p><b>Mac Model:</b> <span id="mac_1" class="description_links">Universal</span>, <span id="mac_2" class="description_links">Intel</span>, <span id="mac_3" class="description_links">Silicon</span></p>
+                        <p><b>Linux Model:</b>  <span id="linux_1" class="description_links">deb</span>, <span id="linux_2" class="description_links">rpm</span>, <span id="linux_3" class="description_links">tarball</span>, <span id="linux_4" class="description_links">Arm</span>, <span id="linux_5" class="description_links">snap</span></p>
+                    </div>
+                </div>
+                <div class="software_common_design" id="redirect_android_studio">
+                    <div class="software_image">
+                        <img src="./Images_Index/android-studio.png" alt="">
+                    </div>
+                    <div class="software_name">
+                        <h1>Android Studio</h1>
+                    </div>
+                    <div class="software_description">
+                        <p><b>Version:</b> 2022.3</p>
+                        <p><b>Patch:</b> 1</p>
+                        <p><b>Version Name:</b> Giraffe</p>
+                        <p><b>Used For:</b> Android App Development</p>
+                    </div>
+                </div>
+                <div class="software_common_design" id="redirect_pieces">
+                    <div class="software_image">
+                        <img src="./Images_Index/pieces_logo.png" alt="" style="margin-top: -1.1vw;">
+                    </div>
+                    <div class="software_name">
+                        <h1>Pieces</h1>
+                    </div>
+                    <div class="software_description">
+                        <p><b>Pieces OS Version:</b> 9.0.2</p>
+                        <p><b>Pieces for Developers Version:</b> 2.12.1</p>
+                        <p><b>Requirements:</b> P-Developers requires P-OS</p>
+                        <p><b>Used For:</b> Code snippet and online sharing</p>
+                    </div>
+                </div>
+            </div>
+            <div id="section_bottom" class="reveal">
+                <div class="software_common_design" id="redirect_mysql_wb">
+                    <div class="software_image">
+                        <img src="./Images_Index/mysql_workbench_logo.png" alt="">
+                    </div>
+                    <div class="software_name">
+                        <h1>MySQL Workbench</h1>
+                    </div>
+                    <div class="software_description">
+                        <p><b>Version:</b> 8.0.34</p>
+                        <p><b>Build:</b> CE 64 bits</p>
+                        <p><b>Type:</b> Community</p>
+                        <p><b>Used For:</b> MySQL Database</p>
+                    </div>
+                </div>
+                <div class="software_common_design" id="redirect_arduino_ide">
+                    <div class="software_image">
+                        <img src="./Images_Index/arduino_ide_logo.png" alt="">
+                    </div>
+                    <div class="software_name">
+                        <h1>Arduino IDE</h1>
+                    </div>
+                    <div class="software_description">
+                        <p><b>Version:</b> 2.2.1</p>
+                        <p><b>CLI Version:</b> 0.34.0</p>
+                        <p><b>Copyright &copy; 2024:</b> Arduino SA</p>
+                        <p><b>Used For:</b> Development</p>
+                    </div>
+                </div>
+                <div class="software_common_design" id="redirect_jupyter">
+                    <div class="software_image">
+                        <img src="./Images_Index/jupyter_logo.png" alt="" style="border-radius: 10vw;">
+                    </div>
+                    <div class="software_name">
+                        <h1>Jupyter</h1>
+                    </div>
+                    <div class="software_description">
+                        <p><b>Version:</b> 20.36.4</p>
+                        <p><b>Patch:</b> Patch 01</p>
+                        <p><b>Version Name:</b> Flamingo</p>
+                        <p><b>Used For:</b> Development</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page 4 Content Ends -->
+
+    <!-- Page 5 Content Starts -->
+    <div class="content_page_fifth" id="fifth_page">
+        <div class="heading_as_separator reveal">
+            <h1 id="h_1">Reach Through Sources</h1>
+        </div>
+
+        <div id="group_connectivities" class="reveal"> <!-- Webiste Taps LinkedIn Social Network-->
+            <div class="individual_connectivity" id="website_taps">
+                <div class="magnitude classrun1" id="count_website_taps">
+                    <p id="run1"> +</p>
+                </div>
+                <div class="base_heading">
+                    <p id="wt">Website Taps</p>
+                </div>
+            </div>
+            <div class="individual_connectivity" id="linkedin_connections">
+                <div class="magnitude classrun2" id="count_linkedin_connections">
+                    <p id="run2">0 +</p>
+                </div>
+                <div class="base_heading">
+                    <p id="lc">LinkedIn Connections</p>
+                </div>
+            </div>
+            <div class="individual_connectivity" id="personal_network">
+                <div class="magnitude classrun3" id="count_personal_network">
+                    <p id="run3">0 +</p>
+                </div>
+                <div class="base_heading">
+                    <p id="pn">Personal Network</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page 5 Content Ends -->
+
+    <!-- Page 6 Content Starts -->
+    <div class="content_page_sixth" id="sixth_page">
+        <div class="heading_as_separator reveal">
+            <h1 id="h_1">Concluding With The Thought</h1>
+        </div>
+
+        <div id="scroll_end_thought" class="reveal">
+            <div id="thought">
+                <p id="p_thought">In challenging times, it's crucial to remember that initial impressions may not reveal the full picture. Take a step back and analyze the entirety of the situation, as there may be positive aspects you're overlooking. Keep the courage to start a new whenever needed; the first step isn't limited to a single attempt but can be taken each time you choose to rise. In every adversity, there are opportunities for growth, and every situation offers multiple paths — it's up to you to decide whether to restart or remain stagnant.</p>
+                <h2 id="h2_auth">~ Ishika Yadav</h2>
+            </div>
+        </div>
+    </div>
+    <!-- Page 6 Content Ends -->
+
+    <!-- Page 7 Footers Starts -->
+    <div class="footer_page_seventh" id="seventh_page">
+        <div id="back_to_top">
+            <h2 id="h2_back_to_top">Back To Top &#9650;</h2>
+        </div>
+        <div id="overall_container"> <!--Col-->
+            <div id="icon_name">
+                <img src="./Images_Index/favicon.ico" alt=""/>
+                <h2 id="cr_name">Ishika Yadav</h2>
+                <div id="copyright">
+                    <span id="cr_year">Copyright &copy; 2025</span><br /><br /><span id="copyright_link">Yadav-Ishika.github.io.ishikadigitalspace</span>
+                </div>
+            </div>
+            <div id="vertical_divider"></div>
+            <div id="columns">
+                <div id="column_1">
+                    <li><span id="footer_li_1">GitHub : </span><span class="link_footer" id="github_link">Yadav-Ishika</span></li>
+                    <li><span id="footer_li_2">LinkedIn : </span><span class="link_footer" id="linkedin_link">IshikaYadav</span></li>
+                    <li><span id="footer_li_3">Leetcode : </span><span class="link_footer" id="leetcode_link">IshikaYadav</span></li>
+                    <li><span id="footer_li_4">Twitter : </span><span class="link_footer" id="twitter_link">IshikaYadav</span></li>
+                    <li><span id="footer_li_5">Google Scholar : <span class="link_footer" id="google_scholar_link">IshikaYadav</span></span></li>
+                </div>
+                <div id="column_2">
+                    <li><span id="footer_li_6">Instagram : </span><span class="link_footer" id="instagram_link">_y.ishika</span></li>
+                    <li><span id="footer_li_7">Contact Number 1 : +91-xxx-xxxx-xxx</span></li>
+                    <li><span id="footer_li_8">Alternate Contact 2 : +91-xxx-xxxx-xxx</span></li>
+                    <li><span id="footer_li_9">Email (General Use) : </span><span class="link_footer" id="mailto_rysh">ishikayadav11112@gmail.com</span></li>
+                    <li><span id="footer_li_10">Email (Personal Use) : </span><span class="link_footer" id="mailto_rc">ishika.connect@gmail.com</span></li>
+                </div>
+            </div>
+        </div>
+    <!-- Page 7 Footers Ends -->
+    <script>
+        const h4ElementKanishk = document.querySelector('#color_change_item_15');
+
+        h4ElementKanishk.addEventListener('click', function () {
+            window.open('https://www.linkedin.com/in/kanishk-tyagi04/', '_blank');
+        });
+        
+        const h4ElementIshika = document.querySelector('#color_change_item_16');
+
+        h4ElementIshika.addEventListener('click', function () {
+            window.open('https://www.linkedin.com/in/rayyan-ashraf/', '_blank');
+        });
+    </script>
+    <!-- Below JavaScript Code is to Hide Dropdown Menu when user clicks anywhere except for that menu button -->
+    <script language="JavaScript">
+        document.onclick = myClickHandler;
+        function myClickHandler(event) {
+            var clickedElement = event.target
+            var isMenuIconClicked = clickedElement.id === 'menu_icon' || clickedElement.closest('#menu_icon');
+            if (!isMenuIconClicked) {
+                document.getElementById("nav_options").style.display = "none";
+            }
+        }
+    </script>
+    <!-- Below JavaScript Code is to animate percentage fill of skill covered (but when screen on scroll gets visible) -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            function isInViewport(element) {
+                var rect = element.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
+            function handleScroll(animatedElementId, animationName) {
+                var animatedElement = document.getElementById(animatedElementId);
+                if (isInViewport(animatedElement)) {
+                    animatedElement.style.animation = animationName + " 2s ease-in-out";
+                }
+            }
+
+            window.addEventListener("scroll", function() {
+                handleScroll("actual_coverage1", "indicatePercentage1");
+                handleScroll("actual_coverage2", "indicatePercentage2");
+                handleScroll("actual_coverage3", "indicatePercentage3");
+                handleScroll("actual_coverage4", "indicatePercentage4");
+            });
+    
+            handleScroll("actual_coverage1", "indicatePercentage1");
+            handleScroll("actual_coverage2", "indicatePercentage2");
+            handleScroll("actual_coverage3", "indicatePercentage3");
+            handleScroll("actual_coverage4", "indicatePercentage4");
+        });
+    </script>
+    <script>
+        document.getElementById('redirect_vscode').addEventListener('click', () => {
+            window.open('https://code.visualstudio.com/', '_blank');
+        });
+        document.getElementById('redirect_android_studio').addEventListener('click', () => {
+            window.open('https://developer.android.com/', '_blank');
+        });
+        document.getElementById('redirect_pieces').addEventListener('click', () => {
+            window.open('https://pieces.app/', '_blank');
+        });
+        document.getElementById('redirect_mysql_wb').addEventListener('click', () => {
+            window.open('https://www.mysql.com/', '_blank');
+        });
+        document.getElementById('redirect_arduino_ide').addEventListener('click', () => {
+            window.open('https://www.arduino.cc/', '_blank');
+        });
+        document.getElementById('redirect_jupyter').addEventListener('click', () => {
+            window.open('https://jupyter.org/', '_blank');
+        });
+        document.getElementById('windows_1').addEventListener('click', () => {
+            window.open('https://update.code.visualstudio.com/1.89.1/win32-x64-user/stable', '_blank');
+        });
+        document.getElementById('windows_2').addEventListener('click', () => {
+            window.open('https://update.code.visualstudio.com/1.89.1/win32-arm64-user/stable', '_blank');
+        });
+        document.getElementById('mac_1').addEventListener('click', () => {
+            window.open('https://update.code.visualstudio.com/1.89.1/darwin-universal/stable', '_blank');
+        });
+        document.getElementById('mac_2').addEventListener('click', () => {
+            window.open('https://update.code.visualstudio.com/1.89.1/darwin/stable', '_blank');
+        });
+        document.getElementById('mac_3').addEventListener('click', () => {
+            window.open('https://update.code.visualstudio.com/1.89.1/darwin-arm64/stable', '_blank');
+        });
+        document.getElementById('linux_1').addEventListener('click', () => {
+            window.open('https://update.code.visualstudio.com/1.89.1/linux-deb-x64/stable', '_blank');
+        });
+        document.getElementById('linux_2').addEventListener('click', () => {
+            window.open('https://update.code.visualstudio.com/1.89.1/linux-rpm-x64/stable', '_blank');
+        });
+        document.getElementById('linux_3').addEventListener('click', () => {
+            window.open('https://update.code.visualstudio.com/1.89.1/linux-x64/stable', '_blank');
+        });
+        document.getElementById('linux_4').addEventListener('click', () => {
+            window.open('https://code.visualstudio.com/docs/supporting/faq#_previous-release-versions', '_blank');
+        });
+        document.getElementById('linux_5').addEventListener('click', () => {
+            window.open('https://update.code.visualstudio.com/1.89.1/linux-snap-x64/stable', '_blank');
+        });
+        document.getElementById('instagram_link').addEventListener('click', () => {
+            window.open('https://www.instagram.com/_y.ishika', '_blank');
+        });
+        document.getElementById('github_link').addEventListener('click', () => {
+            window.open('https://github.com/Yadav-Ishika', '_blank');
+        });
+        document.getElementById('linkedin_link').addEventListener('click', () => {
+            window.open('https://www.linkedin.com/in/ishika-yadav-86839127a/', '_blank');
+        });
+        document.getElementById('leetcode_link').addEventListener('click', () => {
+            window.open('https://leetcode.com/u/_IshikaYadav/', '_blank');
+        });
+        document.getElementById('twitter_link').addEventListener('click', () => {
+            window.open('#', '_blank');
+        });
+    </script>
+    <!-- ~~~~~~~~~~~~~~~~ Incrementor ~~~~~~~~~~~~~~~~~~~ -->
+    <script>
+        $(document).ready(function(){
+            // Function to animate the counter
+            function animateCounter(selector, target) {
+                $({countNum: $(selector).text()}).animate({countNum: target}, {
+                    duration: 2000,
+                    easing: 'linear',
+                    step: function() {
+                        $(selector).text(Math.floor(this.countNum));
+                    },
+                    complete: function() {
+                        $(selector).text(target);
+                    }
+                });
+            }
+            animateCounter('#run1', 250);
+            animateCounter('#run2', 512);
+            animateCounter('#run3', 500);
+        });
+    </script>
+    <!-- ~~~~~~~~~~~~~~~~ Back To Top ~~~~~~~~~~~~~~~~ -->
+    <script>
+        var backToTopButton = document.getElementById("back_to_top");
+  
+        backToTopButton.addEventListener("click", function() {
+            window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+            });
+        });
+    </script>
+    <script>
+        var backToTopButton = document.getElementById("copyright_link");
+  
+        backToTopButton.addEventListener("click", function() {
+            window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+            });
+        });
+      </script>
+    <!--  -->
+    <script>
+        document.getElementById('mailto_rysh').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the default action of the link
+            window.open('mailto:ishikayadav11112@gmail.com', '_blank');
+        });
+
+        document.getElementById('mailto_rc').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the default action of the link
+            window.open('mailto:ishika.connect@gmail.com', '_blank');
+        });
+    </script>
+    <!-- TO STOP RIGHT CLICK (PREVENT FROM INSPECTING) -->
+    <script>
+        document.addEventListener('contextmenu', function(e) {
+            // e.preventDefault();
+        });
+    </script>
+    <script>
+        const toastOf = document.getElementById('toastOffline');
+        const toastOn = document.getElementById('toastOnline');
+    
+        function showToastOf(message) {
+            toastOf.textContent = message;
+            toastOf.style.display = 'block';
+            setTimeout(() => {
+                toastOf.style.display = 'none';
+            }, 3000);
+        }
+        function showToastOn(message) {
+            toastOn.textContent = message;
+            toastOn.style.display = 'block';
+            setTimeout(() => {
+                toastOn.style.display = 'none';
+            }, 3000);
+        }
+        function updateNetworkStatus() {
+            if (navigator.onLine) {
+                showToastOn('Back Online');
+            } else {
+                showToastOf('No Internet connection');
+            }
+        }
+        window.addEventListener('online', updateNetworkStatus);
+        window.addEventListener('offline', updateNetworkStatus);
+    </script>
+
+
+
+
+    <!-- <script>
+        
+        IF WANT TO COLLECT USER'S DATA
+
+        window.onload = function () {
+            const userData = {
+                browser: navigator.userAgent,
+                platform: navigator.platform,
+                language: navigator.language,
+                dateTime: new Date().toString()
+            };
+        
+            console.log("User Data Collected:", userData);
+        
+        };
+    </script>
+    <script>
+        fetch('https://ipapi.co/json/')
+            .then(response => response.json())
+            .then(data => {
+            console.log('User IP and Location Data:', data);
+        })
+    </script> -->
+</body>
+</html>
