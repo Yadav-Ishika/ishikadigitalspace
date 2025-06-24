@@ -55,7 +55,7 @@ header .container_main_for_header {
 }
 
 #logo p {
-	color: #d8b4fe;
+	color: #2CA4AB;
 	font-size: 3vw;
 }
 
@@ -93,7 +93,7 @@ header .container_main_for_header {
 	bottom: -2px;
 	width: 0;
 	height: 2px;
-	background-color: #9333ea;
+	background-color: #2CA4AB;
 	transition: width 0.3s ease;
 }
 
@@ -111,7 +111,7 @@ header .container_main_for_header {
 }
 .navigation_right .navigators #color_change_item_4 {
 	width: 100%;
-	border-bottom: 2px solid #9333ea;
+	border-bottom: 2px solid #2CA4AB
 }
 
 .navigation_right .navigators ul svg {
@@ -240,7 +240,7 @@ header .container_main_for_header {
 }
 
 #nav_options .nav_link_buttons:hover {
-	box-shadow: 0px 0px 5px 0.1px #9333ea;
+	box-shadow: 0px 0px 5px 0.1px #2CA4AB;
 }
 
 #nav_options a {

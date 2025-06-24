@@ -12,7 +12,7 @@ header .container_main_for_header {
 }
 
 #logo {
-	background-color: #1f2937;
+	background-color: #343A40;
 	padding: 1.1vw;
 	margin-left: 2vw;
 }
@@ -29,7 +29,7 @@ header .container_main_for_header {
 .container_top_for_header {
 	display: flex;
 	justify-content: space-between;
-	background-color: #1f2937;
+	background-color: #343A40;
 	height: 6vw;
 	padding: 0vw 2vw;
 }
@@ -56,7 +56,7 @@ header .container_main_for_header {
 	bottom: -2px;
 	width: 0;
 	height: 2px;
-	background-color: #9333ea;
+	background-color: #2CA4AB;
 	transition: width 0.3s ease;
 }
 
@@ -74,7 +74,7 @@ header .container_main_for_header {
 }
 .navigation_right .navigators #color_change_item_8 {
 	width: 100%;
-	border-bottom: 2px solid #9333ea;
+	border-bottom: 2px solid #2CA4AB;
 }
 
 .navigation_right .navigators ul svg {
@@ -102,7 +102,7 @@ header .container_main_for_header {
 
 .login_signup_buttons button {
 	padding: 0.65vw 1vw;
-	background-color: #c084fc; /* Matching theme color */
+	background-color: #2CA4AB; /* Matching theme color */
 	border: none;
 	border-radius: 10px;
 	margin-left: 1.1vw;
@@ -113,7 +113,7 @@ header .container_main_for_header {
 }
 
 .login_signup_buttons button:hover {
-	background-color: #a56cfd; /* Darker shade on hover */
+	background-color: #2CA4AB; /* Darker shade on hover */
 	transform: translateY(-2px); /* Move button slightly upwards */
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 }
@@ -125,14 +125,14 @@ header .container_main_for_header {
 }
 
 .container_bottom_for_header {
-	background-color: #1f2937;
+	background-color: #343A40;
 	height: 2.5vw;
 	text-align: center;
 	padding: 0.7vw;
 }
 
 #live_running_updates {
-	background-color: #1f2937;
+	background-color: #343A40;
 	color: rgb(156 163 175);
 	font-size: 1.05vw;
 	font-weight: 500;
@@ -140,14 +140,14 @@ header .container_main_for_header {
 }
 
 #menu_icon {
-	color: #d8b4fe; /* Icon color */
+	color: #2CA4AB; /* Icon color */
 	font-size: 2vw; /* Adjust icon size */
 	margin-right: 20px; /* Adjust spacing from other elements */
 	display: none;
 }
 
 .content_page_first {
-	background-color: #111827;
+	background-color: #1F2125;
 	width: 100%;
 	height: 100vh;
 	display: flex;
@@ -184,7 +184,7 @@ header .container_main_for_header {
 	padding: 4vw;
 	margin-top: 4vw;
 	line-height: 2.5vw;
-	box-shadow: -4px 4px 10px rgba(0, 0, 255, 0.2);
+	box-shadow: -4px 4px 10px #2CA4AB;
 	font-size: 1.5vw;
 	text-align: left;
 	color: rgb(156, 163, 175, 1);
@@ -656,7 +656,7 @@ input[type="submit"]:hover {
         letter-spacing: 2px;
     }
     #logo p {
-        color: #D8B4FE;
+        color: #2CA4AB;
         font-size: 7vw;
     }
     #separator_line {

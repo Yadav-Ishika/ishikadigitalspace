@@ -73,7 +73,7 @@ window.addEventListener('DOMContentLoaded', function() {
             toggle_count++;
             document.getElementById("color_change_item_1").style.backgroundColor = "#fff";
             document.getElementById("logo").style.backgroundColor = "#fff";
-            document.getElementById("color_change_item_2").style.color = "#7E22CE";
+            document.getElementById("color_change_item_2").style.color = "#2CA4AB";
             document.getElementById("color_change_item_3").style.color = "#000";
             document.getElementById("color_change_item_4").style.color = "#000";
             document.getElementById("color_change_item_5").style.color = "#000";
@@ -81,7 +81,7 @@ window.addEventListener('DOMContentLoaded', function() {
             document.getElementById("color_change_item_7").style.color = "#000";
             document.getElementById("color_change_item_8").style.color = "#000";
             // document.getElementById("color_change_item_9").style.color = "#000";
-            document.getElementById("svgIcon").style.color = "#9333EA";
+            document.getElementById("svgIcon").style.color = "#2CA4AB";
             document.getElementById("separator_line").style.backgroundColor = "#9CA3AF";
             document.getElementById("color_change_item_10").style.backgroundColor = "#fff";
             document.getElementById("live_running_updates").style.backgroundColor = "#fff";
@@ -146,7 +146,7 @@ window.addEventListener('DOMContentLoaded', function() {
             toggle_count++;
             document.getElementById("color_change_item_1").style.backgroundColor = "#1F2937";
             document.getElementById("logo").style.backgroundColor = "#1F2937";
-            document.getElementById("color_change_item_2").style.color = "#D8B4FE";
+            document.getElementById("color_change_item_2").style.color = "#2CA4AB";
             document.getElementById("color_change_item_3").style.color = "#fff";
             document.getElementById("color_change_item_4").style.color = "#fff";
             document.getElementById("color_change_item_5").style.color = "#fff";
